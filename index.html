@@ -303,27 +303,67 @@
   <section id="download" class="download">
     <h2>Baixe o App</h2>
     <!-- Link direto (servidor próprio ou encurtador) -->
-<a 
-  href="https://danilobiancod3.github.io/stockfy/apk/Stockfy.apk" 
-  class="apk-button" 
-  download 
->
-  📥 Baixar Stockfy APK
-</a>
+  <a 
+    href="https://danilobiancod3.github.io/stockfy/apk/Stockfy_v1.2.2.apk" 
+    class="apk-button" 
+    download 
+  >
+    📥 Baixar Stockfy APK
+  </a>
 
-<br><br>
+  <br><br>
 
-<!-- Link via Google Drive -->
-<a 
-  href="https://drive.google.com/file/d/12DScr-zviacXn4k5PJJjwdmY2aLLZyIN/view?usp=sharing" 
-  class="apk-button" 
-  target="_blank" 
-  rel="noopener"
-  style="display: inline-flex; align-items: center; margin-top: 20px;"
->
-  <img src="https://cdn-icons-png.flaticon.com/512/889/889113.png" alt="Ícone Google Drive" style="width: 24px; height: 24px; margin-right: 8px;">
-  Baixar Stockfy (Google Drive)
-</a>
+  <!-- Link via Google Drive -->
+  <a 
+    href="https://drive.google.com/file/d/12DScr-zviacXn4k5PJJjwdmY2aLLZyIN/view?usp=sharing" 
+    class="apk-button" 
+    target="_blank" 
+    rel="noopener"
+    style="display: inline-flex; align-items: center; margin-top: 20px;"
+  >
+    <img src="https://cdn-icons-png.flaticon.com/512/889/889113.png" alt="Ícone Google Drive" style="width: 24px; height: 24px; margin-right: 8px;">
+    Baixar Stockfy (Google Drive)
+  </a>
+
+  <br>
+
+  <!-- Botão para mostrar versões antigas -->
+  <div style="margin-top: 30px; text-align: center;">
+    <button 
+      id="toggle-versions" 
+      style="
+        background: none;
+        border: none;
+        color: #2d6cdf;
+        font-size: 0.95em;
+        cursor: pointer;
+        text-decoration: underline;
+      "
+    >
+      Ver versões antigas ⬇
+    </button>
+  </div>
+
+  <div id="old-versions" style="display: none; text-align: center; margin-top: 15px;">
+    <h4>📦 Stockfy v1.2.1</h4>
+    <a 
+      href="https://danilobiancod3.github.io/stockfy/apk/Stockfy_v1.2.1.apk" 
+      class="apk-button" 
+      style="background-color: #ccc; color: #333; margin-bottom: 10px;"
+      download
+    >
+      Baixar APK
+    </a>
+    <a 
+      href="https://drive.google.com/file/d/12DScr-zviacXn4k5PJJjwdmY2aLLZyIN/view?usp=sharing" 
+      class="apk-button" 
+      style="background-color: #ccc; color: #333;"
+      download
+    >
+      Google Drive
+    </a>
+  </div>
+
 
     <div class="instrucoes">
       <strong>Como instalar o app:</strong><br><br>
@@ -356,6 +396,10 @@
       &nbsp;|&nbsp;
       <a style="color: #2d6cdf; text-decoration: none;">
         Pedro Henrique Barbosa
+      </a>
+      &nbsp;|&nbsp;
+      <a style="color: #2d6cdf; text-decoration: none;">
+        Samuel Aparecido da Silva
       </a>
     </p>
     <p style="margin-top: 10px;">
@@ -406,6 +450,20 @@
     nextBtn.addEventListener('click', () => {
       currentIndex = (currentIndex + 1) % zoomables.length;
       modalImg.src = zoomables[currentIndex].src;
+    });
+
+    // Alternar exibição das versões antigas
+    const toggleBtn = document.getElementById('toggle-versions');
+    const oldVersionsDiv = document.getElementById('old-versions');
+
+    toggleBtn.addEventListener('click', () => {
+      if (oldVersionsDiv.style.display === 'none') {
+        oldVersionsDiv.style.display = 'block';
+        toggleBtn.textContent = 'Ocultar versões antigas ⬆';
+      } else {
+        oldVersionsDiv.style.display = 'none';
+        toggleBtn.textContent = 'Ver versões antigas ⬇';
+      }
     });
   </script>
 
